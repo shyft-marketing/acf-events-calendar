@@ -36,7 +36,6 @@ class ACF_Events_Calendar_REST_API {
             'post_status' => 'publish',
             'posts_per_page' => -1,
             'meta_query' => [
-                'relation' => 'AND',
                 [
                     'key' => 'start_date',
                     'compare' => 'EXISTS'
@@ -116,11 +115,18 @@ class ACF_Events_Calendar_REST_API {
                 $query->the_post();
                 $event_id = get_the_ID();
                 
-                // Get all ACF fields
-                $start_date = get_field('start_date', $event_id);
-                $end_date = get_field('end_date', $event_id);
-                $start_time = get_field('start_time', $event_id);
-                $end_time = get_field('end_time', $event_id);
+                // Get all ACF fields (use false to get raw database values)
+                $start_date = get_field('start_date', $event_id, false);
+                $end_date = get_field('end_date', $event_id, false);
+                $start_time = get_field('start_time', $event_id, false);
+                $end_time = get_field('end_time', $event_id, false);
+                
+                // Get formatted values for display
+                $start_date_formatted = get_field('start_date', $event_id);
+                $end_date_formatted = get_field('end_date', $event_id);
+                $start_time_formatted = get_field('start_time', $event_id);
+                $end_time_formatted = get_field('end_time', $event_id);
+                
                 $event_url = get_field('event_url', $event_id);
                 $event_address = get_field('event_address', $event_id);
                 $event_description = get_field('event_description', $event_id);
@@ -132,9 +138,10 @@ class ACF_Events_Calendar_REST_API {
                 $event_types = wp_get_post_terms($event_id, 'event-type', ['fields' => 'names']);
                 $event_formats = wp_get_post_terms($event_id, 'event-format', ['fields' => 'names']);
                 
-                // Format dates for FullCalendar
-                $start_datetime = $start_date;
+                // Format dates for FullCalendar (ISO 8601)
+                $start_datetime = $start_date; // Already in Ymd format from ACF
                 if ($start_time) {
+                    // Convert time from HH:mm:ss to proper ISO format
                     $start_datetime .= 'T' . $start_time;
                 }
                 
@@ -154,10 +161,10 @@ class ACF_Events_Calendar_REST_API {
                     'allDay' => empty($start_time),
                     'url' => 'javascript:void(0)', // Prevent default link behavior
                     'extendedProps' => [
-                        'start_date' => $start_date,
-                        'end_date' => $end_date,
-                        'start_time' => $start_time,
-                        'end_time' => $end_time,
+                        'start_date' => $start_date_formatted,
+                        'end_date' => $end_date_formatted,
+                        'start_time' => $start_time_formatted,
+                        'end_time' => $end_time_formatted,
                         'event_url' => $event_url,
                         'event_address' => $event_address,
                         'event_description' => $event_description,
