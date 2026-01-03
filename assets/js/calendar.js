@@ -169,6 +169,13 @@
         // Event Title
         html += '<h2 class="event-modal-title">' + escapeHtml(event.title) + '</h2>';
         
+        // Featured Image
+        if (props.featured_image) {
+            html += '<div class="event-featured-image">';
+            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+            html += '</div>';
+        }
+        
         // Event Types (taxonomies)
         if (props.event_types && props.event_types.length > 0) {
             html += '<div class="event-meta-item event-types">';
@@ -230,6 +237,13 @@
         if (props.event_description) {
             html += '<div class="event-meta-item event-description">';
             html += '<div class="event-value">' + props.event_description + '</div>';
+            html += '</div>';
+        }
+        
+        // Post Content
+        if (props.post_content) {
+            html += '<div class="event-meta-item event-post-content">';
+            html += '<div class="event-value">' + props.post_content + '</div>';
             html += '</div>';
         }
         
