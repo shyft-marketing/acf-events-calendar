@@ -134,6 +134,15 @@ class ACF_Events_Calendar_REST_API {
                 $registration_link = get_field('registration_link', $event_id);
                 $registration_cta = get_field('registration_cta_text', $event_id);
                 
+                // Get post content and featured image
+                $post_content = get_the_content(null, false, $event_id);
+                $post_content = apply_filters('the_content', $post_content);
+                
+                $featured_image = null;
+                if (has_post_thumbnail($event_id)) {
+                    $featured_image = get_the_post_thumbnail_url($event_id, 'large');
+                }
+                
                 // Get taxonomies
                 $event_types = wp_get_post_terms($event_id, 'event-type', ['fields' => 'names']);
                 $event_formats = wp_get_post_terms($event_id, 'event-format', ['fields' => 'names']);
@@ -173,7 +182,9 @@ class ACF_Events_Calendar_REST_API {
                         'registration_cta' => $registration_cta,
                         'event_types' => $event_types,
                         'event_formats' => $event_formats,
-                        'permalink' => get_permalink($event_id)
+                        'permalink' => get_permalink($event_id),
+                        'post_content' => $post_content,
+                        'featured_image' => $featured_image
                     ]
                 ];
                 
