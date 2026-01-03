@@ -2,11 +2,9 @@
 /**
  * Plugin Name: ACF Events Calendar
  * Description: Custom events calendar with FullCalendar.io integration for ACF-powered events
- * Version: 1.0.2
- * Author: SHYFT
+ * Version: 1.0.3
+ * Author: Macomb Defenders Rising
  * Requires PHP: 7.4
- * GitHub Plugin URI: shyft-marketing/acf-events-calendar
- * Primary Branch: main
  */
 
 if (!defined('ABSPATH')) {
@@ -52,6 +50,15 @@ class ACF_Events_Calendar {
         if (!is_a($post, 'WP_Post') || !has_shortcode($post->post_content, 'acf_events_calendar')) {
             return;
         }
+        
+        // Font Awesome
+        wp_enqueue_script(
+            'font-awesome',
+            'https://kit.fontawesome.com/501cbc8a37.js',
+            [],
+            null,
+            true
+        );
         
         // FullCalendar CSS
         wp_enqueue_style(
