@@ -179,7 +179,7 @@
         // Event Types (taxonomies)
         if (props.event_types && props.event_types.length > 0) {
             html += '<div class="event-meta-item event-types">';
-            html += '<span class="event-label">Type:</span> ';
+            html += '<i class="fa-solid fa-filter event-icon"></i>';
             html += '<span class="event-value">' + escapeHtml(props.event_types.join(', ')) + '</span>';
             html += '</div>';
         }
@@ -187,21 +187,21 @@
         // Event Formats (taxonomies)
         if (props.event_formats && props.event_formats.length > 0) {
             html += '<div class="event-meta-item event-formats">';
-            html += '<span class="event-label">Format:</span> ';
+            html += '<i class="fa-solid fa-tag event-icon"></i>';
             html += '<span class="event-value">' + escapeHtml(props.event_formats.join(', ')) + '</span>';
             html += '</div>';
         }
         
         // Date
         html += '<div class="event-meta-item event-date">';
-        html += '<span class="event-label">Date:</span> ';
+        html += '<i class="fa-solid fa-calendar-days event-icon"></i>';
         html += '<span class="event-value">' + formatEventDate(props.start_date, props.end_date) + '</span>';
         html += '</div>';
         
         // Time
         if (props.start_time || props.end_time) {
             html += '<div class="event-meta-item event-time">';
-            html += '<span class="event-label">Time:</span> ';
+            html += '<i class="fa-solid fa-clock event-icon"></i>';
             html += '<span class="event-value">' + formatEventTime(props.start_time, props.end_time) + '</span>';
             html += '</div>';
         }
@@ -209,7 +209,7 @@
         // Location/Address
         if (props.event_address) {
             html += '<div class="event-meta-item event-location">';
-            html += '<span class="event-label">Location:</span> ';
+            html += '<i class="fa-solid fa-location-dot event-icon"></i>';
             
             // Handle Google Map field - it returns an object with address
             let address = '';
