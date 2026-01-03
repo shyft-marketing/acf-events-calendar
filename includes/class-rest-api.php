@@ -124,8 +124,6 @@ class ACF_Events_Calendar_REST_API {
                 // Get formatted values for display
                 $start_date_formatted = get_field('start_date', $event_id);
                 $end_date_formatted = get_field('end_date', $event_id);
-                $start_time_formatted = get_field('start_time', $event_id);
-                $end_time_formatted = get_field('end_time', $event_id);
                 
                 $event_url = get_field('event_url', $event_id);
                 $event_address = get_field('event_address', $event_id);
@@ -172,8 +170,8 @@ class ACF_Events_Calendar_REST_API {
                     'extendedProps' => [
                         'start_date' => $start_date_formatted,
                         'end_date' => $end_date_formatted,
-                        'start_time' => $start_time_formatted,
-                        'end_time' => $end_time_formatted,
+                        'start_time' => $start_time,
+                        'end_time' => $end_time,
                         'event_url' => $event_url,
                         'event_address' => $event_address,
                         'event_description' => $event_description,
