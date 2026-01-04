@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ACF Events Calendar
  * Description: Custom events calendar with FullCalendar.io integration for ACF-powered events
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: SHYFT
  * Requires PHP: 7.4
  * GitHub Plugin URI: shyft-marketing/acf-events-calendar
