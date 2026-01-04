@@ -96,6 +96,9 @@
                 if (selectedDates.length === 2) {
                     filterParams.start_date = formatDate(selectedDates[0]);
                     filterParams.end_date = formatDate(selectedDates[1]);
+                    if (calendar) {
+                        calendar.gotoDate(selectedDates[0]);
+                    }
                     refreshCalendar();
                 }
             }
