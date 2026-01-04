@@ -36,6 +36,12 @@
 .filter-group select,
 .filter-group input[type="text"] {
     padding: 10px 12px;
+    min-height: 44px;
+}
+
+.filter-group #date-range-filter {
+    background-color: #fff;
+    color: inherit;
 }
 
 .clear-filters-btn {
