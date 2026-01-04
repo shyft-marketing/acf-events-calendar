@@ -187,6 +187,7 @@
         const props = event.extendedProps;
         let html = '';
         let addressHtml = '';
+        let actionsHtml = '';
 
         if (props.event_address) {
             let address = '';
@@ -263,20 +264,26 @@
 
         // Event URL
         if (props.event_url) {
-            html += '<div class="event-meta-item event-url">';
-            html += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
-            html += 'Event Website</a>';
-            html += '</div>';
+            actionsHtml += '<div class="event-meta-item event-url">';
+            actionsHtml += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
+            actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+            actionsHtml += 'Event Website</a>';
+            actionsHtml += '</div>';
         }
 
         // Registration
         if (props.registration_required && props.registration_link) {
             const ctaText = props.registration_cta || 'Register';
-            html += '<div class="event-meta-item event-registration">';
-            html += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
-            html += escapeHtml(ctaText);
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+            actionsHtml += '<div class="event-meta-item event-registration">';
+            actionsHtml += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
+            actionsHtml += escapeHtml(ctaText);
+            actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+            actionsHtml += '</div>';
+        }
+
+        if (actionsHtml) {
+            html += '<div class="event-modal-actions">';
+            html += actionsHtml;
             html += '</div>';
         }
 
