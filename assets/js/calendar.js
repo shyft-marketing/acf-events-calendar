@@ -24,7 +24,7 @@
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'dayGridMonth,timeGridWeek,listMonth'
+                right: 'dayGridMonth,listMonth'
             },
             events: function(info, successCallback, failureCallback) {
                 fetchEvents(successCallback, failureCallback);

@@ -4,7 +4,7 @@ Custom WordPress plugin for displaying ACF-powered events in a FullCalendar.io i
 
 ## Features
 
-- ✅ Full calendar view with month/week/list views
+- ✅ Full calendar view with month/list views
 - ✅ Ajax-powered filtering (no page reloads)
 - ✅ Filter by Event Type taxonomy
 - ✅ Filter by Event Format taxonomy
