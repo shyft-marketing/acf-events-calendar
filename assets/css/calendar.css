@@ -151,6 +151,24 @@
     padding: 2px 4px;
 }
 
+.fc-timegrid-event .fc-event-title {
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+.fc-timegrid-event .fc-event-title-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.fc-timegrid-event .fc-event-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
 /* Different colors for different event formats */
 .fc-event.format-virtual-event {
     background-color: #28a745;
