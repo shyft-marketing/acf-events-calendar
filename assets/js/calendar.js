@@ -26,6 +26,10 @@
                 center: 'title',
                 right: 'dayGridMonth,listMonth'
             },
+            buttonText: {
+                dayGridMonth: 'Calendar',
+                listMonth: 'List'
+            },
             events: function(info, successCallback, failureCallback) {
                 fetchEvents(successCallback, failureCallback);
             },
