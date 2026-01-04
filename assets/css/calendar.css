@@ -176,12 +176,13 @@
 .event-modal-row--top {
     display: flex;
     align-items: flex-start;
-    gap: 5vw;
+    gap: 32px;
+    flex-wrap: wrap;
 }
 
 .event-modal-column {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 1 1 0;
+    max-width: 100%;
     min-width: 0;
 }
 
