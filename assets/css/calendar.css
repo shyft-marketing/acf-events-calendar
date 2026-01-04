@@ -4,9 +4,10 @@
 
 /* Wrapper */
 .acf-events-calendar-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* ========================================
@@ -18,9 +19,9 @@
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 30px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
+    padding: 0 0 2rem;
+    background: transparent;
+    border-radius: 0;
 }
 
 .filter-group {
@@ -77,10 +78,10 @@
    ======================================== */
 
 #acf-events-calendar {
-    background: white;
-    padding: 20px;
+    background: transparent;
+    padding: 0;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: none !important;
 }
 
 /* Calendar event styling */
@@ -136,8 +137,8 @@
     transform: translate(-50%, -50%);
     background: white;
     border-radius: 12px;
-    max-width: 600px;
-    width: 90%;
+    max-width: 80vw !important;
+    width: 100% !important;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -227,16 +228,22 @@
 }
 
 .event-meta-item {
-    margin-bottom: 15px;
+    margin-bottom: 0;
     line-height: 1.6;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
 }
 
 .event-meta-item:last-child {
     margin-bottom: 0;
+}
+
+.event-meta-item i {
+    color: #fe4dcf;
+    margin: 0;
 }
 
 .event-label {
@@ -249,6 +256,11 @@
     color: #333;
 }
 
+.event-value a {
+    color: #333333;
+    text-decoration: underline;
+}
+
 .event-types .event-value,
 .event-formats .event-value {
     display: inline-flex;
@@ -259,6 +271,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    row-gap: 0.5rem;
     margin-bottom: 20px;
 }
 
@@ -331,8 +344,8 @@
 }
 
 .event-location a {
-    color: #007bff;
-    text-decoration: none;
+    color: #333333;
+    text-decoration: underline;
 }
 
 .event-location a:hover {
@@ -415,9 +428,25 @@ body.modal-open {
     border-color: #e9ecef;
 }
 
+.fc-scrollgrid-sync-inner {
+    background-color: black;
+    color: white;
+}
+
+.fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
+    background-color: white;
+    color: black;
+}
+
 .fc .fc-daygrid-day-number {
-    color: #333;
-    font-weight: 600;
+    color: inherit;
+    font-weight: 400 !important;
+    padding: 0.5rem !important;
+    font-size: 0.75rem;
+}
+
+.fc-col-header {
+    margin-bottom: 0 !important;
 }
 
 .fc .fc-col-header-cell-cushion {
