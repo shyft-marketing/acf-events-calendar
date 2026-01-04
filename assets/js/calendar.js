@@ -175,7 +175,7 @@
                     const mapsUrl = 'https://www.google.com/maps?q=' + 
                                   props.event_address.lat + ',' + props.event_address.lng;
                     addressHtml += '<a href="' + mapsUrl + '" target="_blank" rel="noopener">' + 
-                           escapeHtml(address) + '</a>';
+                           escapeHtml(address) + ' <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
                 } else {
                     addressHtml += escapeHtml(address);
                 }
