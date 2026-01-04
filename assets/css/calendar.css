@@ -92,6 +92,30 @@
     margin-top: auto;
 }
 
+.acf-events-calendar-wrapper button,
+.acf-events-calendar-wrapper [type="button"],
+.acf-events-calendar-wrapper [type="submit"],
+.acf-events-calendar-wrapper [type="reset"] {
+    outline: none;
+    box-shadow: none;
+}
+
+.acf-events-calendar-wrapper button:focus,
+.acf-events-calendar-wrapper button:focus-visible,
+.acf-events-calendar-wrapper button:active,
+.acf-events-calendar-wrapper [type="button"]:focus,
+.acf-events-calendar-wrapper [type="button"]:focus-visible,
+.acf-events-calendar-wrapper [type="button"]:active,
+.acf-events-calendar-wrapper [type="submit"]:focus,
+.acf-events-calendar-wrapper [type="submit"]:focus-visible,
+.acf-events-calendar-wrapper [type="submit"]:active,
+.acf-events-calendar-wrapper [type="reset"]:focus,
+.acf-events-calendar-wrapper [type="reset"]:focus-visible,
+.acf-events-calendar-wrapper [type="reset"]:active {
+    outline: none;
+    box-shadow: none;
+}
+
 /* ========================================
    Calendar
    ======================================== */
