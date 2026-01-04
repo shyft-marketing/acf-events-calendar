@@ -180,8 +180,8 @@
 }
 
 .event-modal-column {
-    flex: 0 1 calc(50% - 2.5vw);
-    max-width: calc(50% - 2.5vw);
+    flex: 0 0 50%;
+    max-width: 50%;
     min-width: 0;
 }
 
