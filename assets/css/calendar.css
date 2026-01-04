@@ -95,25 +95,36 @@
 .acf-events-calendar-wrapper button,
 .acf-events-calendar-wrapper [type="button"],
 .acf-events-calendar-wrapper [type="submit"],
-.acf-events-calendar-wrapper [type="reset"] {
+.acf-events-calendar-wrapper [type="reset"],
+.acf-events-calendar-wrapper .fc-button {
     outline: none;
     box-shadow: none;
+    text-shadow: none;
 }
 
+.acf-events-calendar-wrapper button:hover,
 .acf-events-calendar-wrapper button:focus,
 .acf-events-calendar-wrapper button:focus-visible,
 .acf-events-calendar-wrapper button:active,
+.acf-events-calendar-wrapper [type="button"]:hover,
 .acf-events-calendar-wrapper [type="button"]:focus,
 .acf-events-calendar-wrapper [type="button"]:focus-visible,
 .acf-events-calendar-wrapper [type="button"]:active,
+.acf-events-calendar-wrapper [type="submit"]:hover,
 .acf-events-calendar-wrapper [type="submit"]:focus,
 .acf-events-calendar-wrapper [type="submit"]:focus-visible,
 .acf-events-calendar-wrapper [type="submit"]:active,
+.acf-events-calendar-wrapper [type="reset"]:hover,
 .acf-events-calendar-wrapper [type="reset"]:focus,
 .acf-events-calendar-wrapper [type="reset"]:focus-visible,
-.acf-events-calendar-wrapper [type="reset"]:active {
+.acf-events-calendar-wrapper [type="reset"]:active,
+.acf-events-calendar-wrapper .fc-button:hover,
+.acf-events-calendar-wrapper .fc-button:focus,
+.acf-events-calendar-wrapper .fc-button:focus-visible,
+.acf-events-calendar-wrapper .fc-button:active {
     outline: none;
     box-shadow: none;
+    text-shadow: none;
 }
 
 /* ========================================
