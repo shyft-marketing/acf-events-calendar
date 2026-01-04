@@ -17,13 +17,13 @@
 .acf-events-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 1rem;
     margin-bottom: 30px;
     padding: 0 0 2rem;
 }
 
 .filter-group {
-    flex: 1;
+    flex: 1 1 200px;
     min-width: 200px;
     display: flex;
     flex-direction: column;
@@ -37,11 +37,50 @@
 .filter-group input[type="text"] {
     padding: 10px 12px;
     min-height: 44px;
+    height: 44px;
+    background-color: #fff;
+    color: inherit;
+    border: 1px solid #767676;
 }
 
 .filter-group #date-range-filter {
+    color: inherit;
+}
+
+.filter-group--search {
+    flex: 2 1 280px;
+    min-width: 240px;
+}
+
+.filter-search-field {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.filter-search-field input[type="text"] {
+    flex: 1 1 auto;
+    min-width: 0;
+    border-right: none;
+}
+
+.filter-search-field .search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    height: 44px;
+    padding: 0 14px;
     background-color: #fff;
     color: inherit;
+    border: 1px solid #767676;
+    border-left: none;
+    cursor: pointer;
+}
+
+.filter-group--clear {
+    flex: 0 0 auto;
+    min-width: auto;
 }
 
 .clear-filters-btn {

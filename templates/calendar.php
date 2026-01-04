@@ -60,12 +60,17 @@ $event_formats = get_terms([
             <input type="text" id="date-range-filter" placeholder="Select date range..." readonly>
         </div>
         
-        <div class="filter-group">
+        <div class="filter-group filter-group--search">
             <label for="event-search">Search</label>
-            <input type="text" id="event-search" placeholder="Search events...">
+            <div class="filter-search-field">
+                <input type="text" id="event-search" placeholder="Search events...">
+                <button type="button" class="search-button" aria-label="Search events">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
         </div>
         
-        <div class="filter-group">
+        <div class="filter-group filter-group--clear">
             <button id="clear-filters" class="clear-filters-btn">Clear Filters</button>
         </div>
         
