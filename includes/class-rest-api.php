@@ -126,7 +126,7 @@ class ACF_Events_Calendar_REST_API {
                 $end_date_formatted = get_field('end_date', $event_id);
                 
                 $event_url = get_field('event_url', $event_id);
-                $event_address = get_field('event_address', $event_id);
+                $event_address = get_field('address', $event_id);
                 $event_description = get_field('event_description', $event_id);
                 $registration_required = get_field('registration_required', $event_id);
                 $registration_link = get_field('registration_link', $event_id);
