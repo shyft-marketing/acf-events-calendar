@@ -20,8 +20,6 @@
     gap: 15px;
     margin-bottom: 30px;
     padding: 0 0 2rem;
-    background: transparent;
-    border-radius: 0;
 }
 
 .filter-group {
@@ -32,45 +30,19 @@
 }
 
 .filter-group label {
-    font-weight: 600;
     margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
 }
 
 .filter-group select,
 .filter-group input[type="text"] {
     padding: 10px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    background: white;
-    transition: border-color 0.3s;
-}
-
-.filter-group select:focus,
-.filter-group input[type="text"]:focus {
-    outline: none;
-    border-color: #007bff;
 }
 
 .clear-filters-btn {
     padding: 10px 20px;
-    background: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background 0.3s;
     align-self: flex-end;
     height: fit-content;
     margin-top: auto;
-}
-
-.clear-filters-btn:hover {
-    background: #5a6268;
 }
 
 /* ========================================
@@ -78,21 +50,13 @@
    ======================================== */
 
 #acf-events-calendar {
-    background: transparent;
     padding: 0;
-    border-radius: 8px;
-    box-shadow: none !important;
 }
 
 /* Calendar event styling */
 .fc-event {
-    cursor: pointer;
     border: none;
     padding: 2px 4px;
-}
-
-.fc-event:hover {
-    opacity: 0.8;
 }
 
 /* Different colors for different event formats */
@@ -127,7 +91,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
 }
 
 .event-modal-content {
@@ -135,13 +98,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 12px;
     max-width: 80vw !important;
     width: 100% !important;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .event-modal-close {
@@ -150,18 +110,7 @@
     right: 15px;
     width: 35px;
     height: 35px;
-    background: #f8f9fa;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
     line-height: 1;
-    cursor: pointer;
-    transition: background 0.3s;
-    color: #333;
-}
-
-.event-modal-close:hover {
-    background: #e9ecef;
 }
 
 .event-modal-body {
@@ -197,15 +146,11 @@
 }
 
 .event-modal-title {
-    font-size: 28px;
-    font-weight: 700;
     margin: 0 0 20px 0;
-    color: #222;
 }
 
 /* Event Icons */
 .event-icon {
-    color: #666;
     margin-right: 10px;
     width: 20px;
     display: inline-block;
@@ -215,7 +160,6 @@
 /* Featured Image */
 .event-featured-image {
     margin: 20px 0;
-    border-radius: 8px;
     overflow: hidden;
     width: 100%;
 }
@@ -242,23 +186,11 @@
 }
 
 .event-meta-item i {
-    color: #fe4dcf;
     margin: 0;
 }
 
 .event-label {
-    font-weight: 600;
-    color: #555;
     display: none;
-}
-
-.event-value {
-    color: #333;
-}
-
-.event-value a {
-    color: #333333;
-    text-decoration: underline;
 }
 
 .event-types .event-value,
@@ -278,24 +210,12 @@
 .event-description {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.event-description .event-value {
-    font-size: 15px;
-    line-height: 1.7;
 }
 
 /* Post Content */
 .event-post-content {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.event-post-content .event-value {
-    font-size: 15px;
-    line-height: 1.7;
 }
 
 .event-post-content .event-value p:first-child {
@@ -315,41 +235,10 @@
 .event-register-btn {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
     gap: 8px;
     align-items: center;
     display: inline-flex;
-}
-
-.event-link-btn {
-    background: #007bff;
-    color: white;
-}
-
-.event-link-btn:hover {
-    background: #0056b3;
-}
-
-.event-register-btn {
-    background: #28a745;
-    color: white;
-    font-size: 16px;
-}
-
-.event-register-btn:hover {
-    background: #218838;
-}
-
-.event-location a {
-    color: #333333;
-    text-decoration: underline;
-}
-
-.event-location a:hover {
-    text-decoration: underline;
 }
 
 /* Prevent body scroll when modal is open */
@@ -395,61 +284,9 @@ body.modal-open {
     }
     
     .event-modal-title {
-        font-size: 24px;
     }
     
     #acf-events-calendar {
         padding: 10px;
     }
-}
-
-/* ========================================
-   Calendar Theme Adjustments
-   ======================================== */
-
-/* Override FullCalendar defaults for better readability */
-.fc .fc-button-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.fc .fc-button-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.fc .fc-button-primary:disabled {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-.fc-theme-standard td,
-.fc-theme-standard th {
-    border-color: #e9ecef;
-}
-
-.fc-scrollgrid-sync-inner {
-    background-color: black;
-    color: white;
-}
-
-.fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
-    background-color: white;
-    color: black;
-}
-
-.fc .fc-daygrid-day-number {
-    color: inherit;
-    font-weight: 400 !important;
-    padding: 0.5rem !important;
-    font-size: 0.75rem;
-}
-
-.fc-col-header {
-    margin-bottom: 0 !important;
-}
-
-.fc .fc-col-header-cell-cushion {
-    color: #666;
-    font-weight: 700;
 }
