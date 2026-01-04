@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ACF Events Calendar
  * Description: Custom events calendar with FullCalendar.io integration for ACF-powered events
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Macomb Defenders Rising
  * Requires PHP: 7.4
  */
