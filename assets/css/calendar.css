@@ -43,6 +43,7 @@
     background-color: #fff;
     color: inherit;
     border: 1px solid #767676;
+    border-radius: 0;
 }
 
 .filter-group #date-range-filter {
@@ -64,6 +65,7 @@
     flex: 1 1 auto;
     min-width: 0;
     border-right: none;
+    border-radius: 0;
 }
 
 .filter-search-field .search-button {
@@ -77,7 +79,21 @@
     color: inherit;
     border: 1px solid #767676;
     border-left: none;
+    border-radius: 0;
     cursor: pointer;
+}
+
+.acf-events-calendar-wrapper .filter-group select:focus,
+.acf-events-calendar-wrapper .filter-group select:focus-visible,
+.acf-events-calendar-wrapper .filter-group input[type="text"]:focus,
+.acf-events-calendar-wrapper .filter-group input[type="text"]:focus-visible,
+.acf-events-calendar-wrapper .filter-search-field input[type="text"]:focus,
+.acf-events-calendar-wrapper .filter-search-field input[type="text"]:focus-visible,
+.acf-events-calendar-wrapper #date-range-filter:focus,
+.acf-events-calendar-wrapper #date-range-filter:focus-visible,
+.acf-events-calendar-wrapper #date-range-filter.flatpickr-input:focus,
+.acf-events-calendar-wrapper #date-range-filter.flatpickr-input:focus-visible {
+    border-radius: 0 !important;
 }
 
 .filter-group--clear {
