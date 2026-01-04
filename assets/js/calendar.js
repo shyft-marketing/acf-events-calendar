@@ -40,19 +40,6 @@
                         info.el.classList.add('format-' + format.toLowerCase().replace(/\s+/g, '-'));
                     });
                 }
-
-                if (!info.el.classList.contains('fc-timegrid-event')) {
-                    return;
-                }
-
-                window.requestAnimationFrame(function() {
-                    const eventWidth = info.el.getBoundingClientRect().width;
-                    if (eventWidth <= 60) {
-                        info.el.classList.add('acf-event--vertical');
-                    } else {
-                        info.el.classList.remove('acf-event--vertical');
-                    }
-                });
             }
         });
         
