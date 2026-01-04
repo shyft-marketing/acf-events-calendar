@@ -234,7 +234,7 @@
     border-right-color: white !important;
 }
 
-.fc-col-header-cell, th.fc-timegrid-axis, .fc-col-header  {
+.fc-col-header-cell, .fc-col-header  {
     padding: 0.5rem !important;
     border-bottom: none !important;
 }
@@ -363,17 +363,6 @@ input#event-search:focus-visible, input#event-search:focus, input#event-search:f
 
 .fc-event-title-container {
     font-weight: 600 !important;
-}
-
-.fc-timegrid-slot {
-    background-color: white !important;
-}
-
-.fc-timegrid-slot-label-frame, .fc-timegrid-slot-label, .fc-timegrid-axis-frame {
-    background-color: black !important;
-    color: white !important;
-    font-weight: 700 !important;
-    font-size: 0.75rem !important;
 }
 
 .fc-list-day-cushion {
