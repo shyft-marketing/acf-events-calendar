@@ -271,8 +271,8 @@
             const ctaText = props.registration_cta || 'Register';
             html += '<div class="event-meta-item event-registration">';
             html += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
-            html += escapeHtml(ctaText) + '</a>';
+            html += escapeHtml(ctaText);
+            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             html += '</div>';
         }
 
