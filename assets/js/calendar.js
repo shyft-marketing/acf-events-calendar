@@ -89,6 +89,7 @@
         });
         
         // Date Range filter
+        let dateRangeOutsideHandler;
         flatpickrInstance = flatpickr('#date-range-filter', {
             mode: 'range',
             dateFormat: 'Y-m-d',
@@ -101,23 +102,36 @@
                     }
                     refreshCalendar();
                 }
+            },
+            onOpen: function(selectedDates, dateStr, instance) {
+                dateRangeOutsideHandler = function(event) {
+                    const clickedCalendar = event.target.closest('.flatpickr-calendar');
+                    const clickedInput = instance.input.contains(event.target);
+                    if (!clickedCalendar && !clickedInput) {
+                        instance.close();
+                    }
+                };
+                document.addEventListener('mousedown', dateRangeOutsideHandler);
+                document.addEventListener('touchstart', dateRangeOutsideHandler);
+            },
+            onClose: function() {
+                if (dateRangeOutsideHandler) {
+                    document.removeEventListener('mousedown', dateRangeOutsideHandler);
+                    document.removeEventListener('touchstart', dateRangeOutsideHandler);
+                    dateRangeOutsideHandler = null;
+                }
             }
         });
         
-        // Search filter (with debounce)
-        let searchTimeout;
-        $('#event-search').on('input', function() {
-            clearTimeout(searchTimeout);
-            const value = $(this).val().trim();
-            
-            searchTimeout = setTimeout(function() {
-                if (value) {
-                    filterParams.search = value;
-                } else {
-                    delete filterParams.search;
-                }
-                refreshCalendar();
-            }, 500);
+        // Search filter (manual submit)
+        $('.filter-search-field .search-button').on('click', function() {
+            const value = $('#event-search').val().trim();
+            if (value) {
+                filterParams.search = value;
+            } else {
+                delete filterParams.search;
+            }
+            refreshCalendar();
         });
         
         // Clear filters
