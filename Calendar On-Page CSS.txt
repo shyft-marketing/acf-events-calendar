@@ -1,0 +1,391 @@
+:root {
+    --pink: #fe4dcf;
+    --pink-hover: #E545BA;
+}
+
+.fc-scrollgrid {
+    border-collapse: collapse !important;
+}
+
+.fc-scroller {
+    border: 1px solid ##dddddd !important;
+    border-collapse: collapse !important;
+}
+
+.acf-events-filters {
+    margin-bottom: 0 !important;
+}
+
+.fc-button {
+    border-radius: 0 !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+}
+
+.fc-button:focus, .fc-button:focus-visible, .fc-button:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.fc-prev-button {
+    border-right: 0.5px solid white !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    background-color: black !important;
+    padding: 0.5rem !important;
+}
+
+.fc-next-button {
+    border-left: 0.5px solid white !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    background-color: black !important;
+    padding: 0.5rem !important;
+}
+
+.fc-prev-button:hover, .fc-next-button:hover {
+    background-color: var(--pink-hover) !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.fc-prev-button:hover {
+    border-right: 0.5px solid white !important;
+}
+
+.fc-next-button:hover {
+    border-left: 0.5px solid white !important;
+}
+
+.fc-col-header {
+    margin-bottom: 0 !important;
+}
+
+.fc-day {
+    background-color: white !important;
+}
+
+.fc-daygrid-day-number {
+    color: black !important;
+    padding: 0.5rem !important;
+}
+
+.fc-day-today .fc-daygrid-day-number {
+    font-weight: 600;
+    color: var(--pink) !important;
+}
+
+.fc-col-header {
+    color: white !important;
+    
+    .fc-day {
+        background-color: black !important;
+    }
+}
+
+.clear-filters-btn {
+    color: var(--pink) !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    text-decoration: underline;
+    font-weight: 400 !important;
+    margin-top: 1.5rem !important;
+}
+
+.clear-filters-btn:hover {
+    text-decoration: underline;
+    color: var(--pink-hover) !important;
+}
+
+.filter-group--clear {
+    vertical-align: middle !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.filter-group label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1em;
+}
+
+.event-filter, #date-range-filter, #event-search {
+    background-color: white;
+    color: #333333;
+    border-radius: 0px !important;
+    border: 1px solid ##dddddd !important;
+    font-size: 1rem !important;
+}
+
+.event-filter::placeholder, #date-range-filter::placeholder, #event-search::placeholder {
+    color: #333333;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .numInput, .flatpickr-calendar {
+    font-size: 0.75rem !important;
+    background-color: white !important;
+    border: none !important;
+    font-weight: 600 !important;
+    color: black !important;
+}
+
+.flatpickr-day, .flatpickr-day:hover, .flatpickr-day:focus, .flatpickr-day:active, .flatpickr-day:focus-visible, .flatpickr-day:focus-within, .flatpickr-day:target {
+    border-radius: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.flatpickr-day.today {
+    border: 1px solid var(--pink) !important;
+    color: var(--pink-hover) !important;
+}
+
+.flatpickr-weekdaycontainer, span.flatpickr-weekday {
+    color: black !important;
+    font-weight: 600 !important;
+}
+
+.fc-event {
+    border-radius: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.fc .fc-list-event:hover td {
+    background-color: unset !important;
+}
+
+.fc-list-event a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.format-in-person {
+    background-color: var(--pink) !important;
+    color: white;
+}
+
+.format-in-person:hover {
+    background-color: var(--pink-hover) !important;
+}
+
+.format-virtual {
+    background-color: #3E92CC !important;
+    color: white;
+}
+
+.format-virtual:hover {
+    background-color: #3883b8 !important;
+}
+
+.format-hybrid {
+    background-color: #9E70CE !important;
+    color: white;
+}
+
+.format-hybrid:hover {
+    background-color: #8e65b9 !important;
+}
+
+.search-button {
+    color: white !important;
+    background-color: black !important;
+    border: 1px solid #dddddd !important;
+}
+
+.search-button:hover {
+    background-color: var(--pink-hover) !important;
+    border: 1px solid var(--pink-hover) !important;
+}
+
+.fc-today-button {
+    background-color: transparent !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    color: var(--pink) !important;
+    text-decoration: underline !important;
+    text-transform: capitalize !important;
+    border: none !important;
+}
+
+.fc-button-group button {
+    background-color: black !important;
+    transition: all 0.3s ease !important;
+    border-right: 1px solid white !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+    margin-left: 0 !important;
+}
+
+.fc-button-group button.fc-button-active {
+    background-color: var(--pink) !important;
+}
+
+.fc-button-group button:hover {
+    background-color: var(--pink-hover) !important;
+    border-right-color: white !important;
+}
+
+.fc-col-header-cell, th.fc-timegrid-axis, .fc-col-header  {
+    padding: 0.5rem !important;
+    border-bottom: none !important;
+}
+
+.event-modal-overlay {
+    background-color: black;
+    opacity: 0.9;
+}
+
+.event-modal-content {
+    background-color: white !important;
+}
+
+.event-modal-body {
+    padding: 2.5% !important;
+}
+
+.event-modal-layout {
+    column-gap: 2rem !important;
+    row-gap: 2rem !important;
+}
+
+.event-modal-close {
+    background-color: transparent !important;
+    padding: 0 !important;
+    font-size: 2rem !important;
+    color: black !important;
+    font-weight: 400 !important;
+}
+
+.event-modal-close:hover {
+    color: var(--pink-hover) !important;
+}
+
+.event-meta-item {
+    column-gap: 0.5rem !important;
+    row-gap: 0.5rem !important;
+}
+
+.event-meta-item i {
+    color: var(--pink) !important;
+}
+
+.event-value a {
+    text-decoration: underline !important;
+    color: #333333 !important;
+    text-underline-offset: 2px !important;
+    transition: all 0.3s ease !important;
+}
+
+.event-value a:hover {
+    color: var(--pink-hover) !important;
+}
+
+.event-register-btn {
+    transition: all 0.3s ease !important;
+    color: white !important;
+    background-color: var(--pink) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+}
+
+.event-register-btn i {
+    color: white !important;
+}
+
+.event-register-btn:hover {
+    background-color: var(--pink-hover) !important;
+}
+
+.event-value i {
+    margin-left: 0.5em !important;
+    font-size: 0.75em !important;
+}
+
+.event-post-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+input#event-search {
+    border-radius: 0 !important;
+}
+
+input#event-search:focus-visible, input#event-search:focus, input#event-search:focus-within, input#date-range-filter:focus, input#date-range-filter:focus-within, input#date-range-filter:focus-visible, select.event-filter:focus, select.event-filter:focus-visible, select.event-filter:focus-within {
+    outline: none;
+    border: 1px solid var(--pink) !important;
+    border-radius: 0 !important;
+}
+
+.flatpickr-day {
+    border-radius: 0 !important;
+}
+
+.flatpickr-day.today {
+    outline: none;
+    border: 1px solid transparent !important;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.flatpickr-day:hover, .flatpickr-day.today:hover {
+    color: var(--pink-hover) !important;
+    background-color: #FFF6FD !important;
+    border-radius: 0 !important;
+    border: 1px solid var(--pink-hover) !important;
+}
+
+.flatpickr-day.selected, .flatpickr-day.selected.startRange, .flatpickr-day.selected.endRange {
+    background-color: var(--pink);
+    color: white;
+    border: 1px solid var(--pink) !important;
+}
+
+.flatpickr-day.inRange, .flatpickr-day.today.inRange {
+    color: var(--pink);
+    background-color: #fff6fd;
+    box-shadow: -5px 0 0 #fff6fd,5px 0 0 #fff6fd;
+    border: none !important;
+}
+
+.fc-event-time {
+    margin-right: 0.5rem !important;
+    font-weight: 400 !important;
+}
+
+.fc-event-title-container {
+    font-weight: 600 !important;
+}
+
+.fc-timegrid-slot {
+    background-color: white !important;
+}
+
+.fc-timegrid-slot-label-frame, .fc-timegrid-slot-label, .fc-timegrid-axis-frame {
+    background-color: black !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 0.75rem !important;
+}
+
+.fc-list-day-cushion {
+    background-color: black !important;
+    color: white !important;
+}
+
+.fc-list-event-title {
+    font-weight: 600;
+}
+
+.fc .fc-list-event-dot,
+.fc .fc-list-event-graphic {
+  display: none;
+}
