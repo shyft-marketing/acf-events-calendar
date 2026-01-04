@@ -180,8 +180,9 @@
 }
 
 .event-modal-column {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 1 calc(50% - 2.5vw);
+    max-width: calc(50% - 2.5vw);
+    min-width: 0;
 }
 
 .event-modal-column--media {
@@ -211,10 +212,12 @@
     margin: 20px 0;
     border-radius: 8px;
     overflow: hidden;
+    width: 100%;
 }
 
 .event-featured-image img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
 }
