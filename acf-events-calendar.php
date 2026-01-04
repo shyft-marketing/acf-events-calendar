@@ -5,6 +5,8 @@
  * Version: 1.0.4
  * Author: SHYFT
  * Requires PHP: 7.4
+ * GitHub Plugin URI: shyft-marketing/acf-events-calendar
+ * Primary Branch: main
  */
 
 if (!defined('ABSPATH')) {
