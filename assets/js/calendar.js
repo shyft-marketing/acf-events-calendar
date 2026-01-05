@@ -26,6 +26,10 @@
                 center: 'title',
                 right: 'dayGridMonth,listMonth'
             },
+            buttonText: {
+                dayGridMonth: 'Calendar',
+                listMonth: 'List'
+            },
             events: function(info, successCallback, failureCallback) {
                 fetchEvents(successCallback, failureCallback);
             },
@@ -275,6 +279,12 @@
             actionsHtml += escapeHtml(ctaText);
             actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             actionsHtml += '</div>';
+        }
+
+        if (actionsHtml) {
+            html += '<div class="event-modal-actions">';
+            html += actionsHtml;
+            html += '</div>';
         }
 
         if (actionsHtml) {
