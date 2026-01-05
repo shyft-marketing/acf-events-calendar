@@ -215,6 +215,16 @@
     gap: 30px;
 }
 
+.event-modal-layout--desktop {
+    display: flex;
+}
+
+.event-modal-layout--mobile {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .event-modal-row--top {
     display: flex;
     align-items: stretch;
@@ -323,6 +333,11 @@
     margin-top: 20px;
 }
 
+.event-modal-actions {
+    display: flex;
+    flex-direction: column;
+}
+
 .event-link-btn,
 .event-register-btn {
     display: inline-block;
@@ -341,6 +356,47 @@ body.modal-open {
 /* ========================================
    Responsive
    ======================================== */
+
+@media (max-width: 1024px) {
+    .event-modal-layout--desktop {
+        display: none;
+    }
+
+    .event-modal-layout--mobile {
+        display: flex;
+    }
+
+    .event-modal-layout--mobile .event-info-grid {
+        gap: 1.5rem;
+    }
+
+    .event-modal-layout--mobile .event-meta-item {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .event-modal-row--mobile-info,
+    .event-modal-row--mobile-content,
+    .event-modal-row--mobile-media {
+        width: 100%;
+    }
+
+    .event-modal-row--mobile-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-modal-row--mobile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-modal-row--mobile-media .event-featured-image {
+        margin: 0;
+    }
+}
 
 @media (max-width: 768px) {
     .acf-events-filters {
@@ -361,21 +417,8 @@ body.modal-open {
         max-height: 95vh;
     }
 
-    .event-modal-row--top {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .event-modal-column {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
     .event-modal-body {
         padding: 35px 20px 20px;
-    }
-    
-    .event-modal-title {
     }
     
     #acf-events-calendar {
