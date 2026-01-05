@@ -361,6 +361,47 @@ body.modal-open {
    Responsive
    ======================================== */
 
+@media (max-width: 1024px) {
+    .event-modal-layout--desktop {
+        display: none;
+    }
+
+    .event-modal-layout--mobile {
+        display: flex;
+    }
+
+    .event-modal-layout--mobile .event-info-grid {
+        gap: 1.5rem;
+    }
+
+    .event-modal-layout--mobile .event-meta-item {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .event-modal-row--mobile-info,
+    .event-modal-row--mobile-content,
+    .event-modal-row--mobile-media {
+        width: 100%;
+    }
+
+    .event-modal-row--mobile-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-modal-row--mobile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-modal-row--mobile-media .event-featured-image {
+        margin: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .acf-events-filters {
         flex-direction: column;
