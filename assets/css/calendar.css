@@ -219,8 +219,22 @@
     gap: 30px;
 }
 
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+.event-modal-layout--desktop {
+    display: flex;
+}
+
+.event-modal-layout--mobile {
+    display: none !important;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.event-modal-row--top {
+=======
 .event-modal-row--info {
     grid-area: info;
+>>>>>>> main
     display: flex;
     align-items: stretch;
     gap: 32px;
@@ -363,15 +377,27 @@ body.modal-open {
 
 @media (max-width: 1024px) {
     .event-modal-layout--desktop {
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+        display: none !important;
+    }
+
+    .event-modal-layout--mobile {
+        display: flex !important;
+=======
         display: none;
     }
 
     .event-modal-layout--mobile {
         display: flex;
+>>>>>>> main
     }
 
     .event-modal-layout--mobile .event-info-grid {
         gap: 1.5rem;
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+        row-gap: 1.5rem;
+=======
+>>>>>>> main
     }
 
     .event-modal-layout--mobile .event-meta-item {
@@ -421,6 +447,8 @@ body.modal-open {
         max-height: 95vh;
     }
 
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+=======
     .event-modal-row--top {
         display: contents;
     }
@@ -474,6 +502,7 @@ body.modal-open {
         order: 6;
     }
     
+>>>>>>> main
     .event-modal-body {
         padding: 35px 20px 20px;
     }

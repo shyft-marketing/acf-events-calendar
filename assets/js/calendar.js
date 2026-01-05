@@ -279,6 +279,15 @@
             actionsHtml += escapeHtml(ctaText);
             actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             actionsHtml += '</div>';
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+        }
+
+        if (actionsHtml) {
+            html += '<div class="event-modal-actions">';
+            html += actionsHtml;
+            html += '</div>';
+=======
+>>>>>>> main
         }
 
         if (actionsHtml) {
@@ -287,9 +296,16 @@
             html += '</div>';
         }
 
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+        html += '<div class="event-modal-column event-modal-column--media">';
+        if (props.featured_image) {
+            html += '<div class="event-featured-image">';
+            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+=======
         if (actionsHtml) {
             html += '<div class="event-modal-actions event-modal-actions--primary">';
             html += actionsHtml;
+>>>>>>> main
             html += '</div>';
         }
 
@@ -376,6 +392,8 @@
             html += '</div>';
             html += '</div>';
         }
+<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+=======
 
         if (actionsHtml) {
             html += '<div class="event-modal-row event-modal-row--actions">';
@@ -395,6 +413,7 @@
             html += '</div>';
             html += '</div>';
         }
+>>>>>>> main
 
         html += '</div>';
         
