@@ -26,6 +26,10 @@
                 center: 'title',
                 right: 'dayGridMonth,listMonth'
             },
+            buttonText: {
+                dayGridMonth: 'Calendar',
+                listMonth: 'List'
+            },
             events: function(info, successCallback, failureCallback) {
                 fetchEvents(successCallback, failureCallback);
             },
@@ -202,8 +206,8 @@
             }
         }
 
-        html += '<div class="event-modal-layout event-modal-layout--desktop">';
-        html += '<div class="event-modal-row event-modal-row--top">';
+        html += '<div class="event-modal-layout">';
+        html += '<div class="event-modal-row event-modal-row--info">';
         html += '<div class="event-modal-column event-modal-column--info">';
 
         // Event Title
@@ -283,14 +287,12 @@
             html += '</div>';
         }
 
-        html += '</div>';
-
-        html += '<div class="event-modal-column event-modal-column--media">';
-        if (props.featured_image) {
-            html += '<div class="event-featured-image">';
-            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+        if (actionsHtml) {
+            html += '<div class="event-modal-actions event-modal-actions--primary">';
+            html += actionsHtml;
             html += '</div>';
         }
+
         html += '</div>';
         html += '</div>';
 
@@ -371,6 +373,25 @@
             html += '<div class="event-modal-row event-modal-row--mobile-media">';
             html += '<div class="event-featured-image">';
             html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+            html += '</div>';
+            html += '</div>';
+        }
+
+        if (actionsHtml) {
+            html += '<div class="event-modal-row event-modal-row--actions">';
+            html += '<div class="event-modal-actions event-modal-actions--secondary">';
+            html += actionsHtml;
+            html += '</div>';
+            html += '</div>';
+        }
+
+        // Featured Image
+        if (props.featured_image) {
+            html += '<div class="event-modal-row event-modal-row--media">';
+            html += '<div class="event-modal-column event-modal-column--media">';
+            html += '<div class="event-featured-image">';
+            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+            html += '</div>';
             html += '</div>';
             html += '</div>';
         }
