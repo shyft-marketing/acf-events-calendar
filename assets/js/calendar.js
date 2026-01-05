@@ -183,6 +183,7 @@
         const props = event.extendedProps;
         let html = '';
         let addressHtml = '';
+        let actionsHtml = '';
 
         if (props.event_address) {
             let address = '';
@@ -202,7 +203,7 @@
         }
 
         html += '<div class="event-modal-layout">';
-        html += '<div class="event-modal-row event-modal-row--top">';
+        html += '<div class="event-modal-row event-modal-row--info">';
         html += '<div class="event-modal-column event-modal-column--info">';
 
         // Event Title
@@ -259,32 +260,29 @@
 
         // Event URL
         if (props.event_url) {
-            html += '<div class="event-meta-item event-url">';
-            html += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
-            html += 'Event Website</a>';
-            html += '</div>';
+            actionsHtml += '<div class="event-meta-item event-url">';
+            actionsHtml += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
+            actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+            actionsHtml += 'Event Website</a>';
+            actionsHtml += '</div>';
         }
 
         // Registration
         if (props.registration_required && props.registration_link) {
             const ctaText = props.registration_cta || 'Register';
-            html += '<div class="event-meta-item event-registration">';
-            html += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
-            html += escapeHtml(ctaText);
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+            actionsHtml += '<div class="event-meta-item event-registration">';
+            actionsHtml += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
+            actionsHtml += escapeHtml(ctaText);
+            actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
+            actionsHtml += '</div>';
+        }
+
+        if (actionsHtml) {
+            html += '<div class="event-modal-actions event-modal-actions--primary">';
+            html += actionsHtml;
             html += '</div>';
         }
 
-        html += '</div>';
-
-        // Featured Image
-        html += '<div class="event-modal-column event-modal-column--media">';
-        if (props.featured_image) {
-            html += '<div class="event-featured-image">';
-            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
-            html += '</div>';
-        }
         html += '</div>';
         html += '</div>';
 
@@ -293,6 +291,25 @@
             html += '<div class="event-modal-row event-modal-row--content">';
             html += '<div class="event-meta-item event-post-content">';
             html += '<div class="event-value">' + props.post_content + '</div>';
+            html += '</div>';
+            html += '</div>';
+        }
+
+        if (actionsHtml) {
+            html += '<div class="event-modal-row event-modal-row--actions">';
+            html += '<div class="event-modal-actions event-modal-actions--secondary">';
+            html += actionsHtml;
+            html += '</div>';
+            html += '</div>';
+        }
+
+        // Featured Image
+        if (props.featured_image) {
+            html += '<div class="event-modal-row event-modal-row--media">';
+            html += '<div class="event-modal-column event-modal-column--media">';
+            html += '<div class="event-featured-image">';
+            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+            html += '</div>';
             html += '</div>';
             html += '</div>';
         }
