@@ -395,9 +395,14 @@ body.modal-open {
         gap: 20px;
     }
 
-    .event-modal-column {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .event-modal-row--mobile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-modal-row--mobile-media .event-featured-image {
+        margin: 0;
     }
 
     .event-modal-column--info {

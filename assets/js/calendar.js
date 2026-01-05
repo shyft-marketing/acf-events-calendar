@@ -304,6 +304,78 @@
             html += '</div>';
             html += '</div>';
         }
+        html += '</div>';
+
+        html += '<div class="event-modal-layout event-modal-layout--mobile">';
+        html += '<div class="event-modal-row event-modal-row--mobile-info">';
+        html += '<h2 class="event-modal-title">' + escapeHtml(event.title) + '</h2>';
+        html += '<div class="event-info-grid">';
+
+        if (props.event_types && props.event_types.length > 0) {
+            html += '<div class="event-meta-item event-types">';
+            html += '<i class="fa-solid fa-filter event-icon"></i>';
+            html += '<span class="event-value">' + escapeHtml(props.event_types.join(', ')) + '</span>';
+            html += '</div>';
+        }
+
+        if (props.event_formats && props.event_formats.length > 0) {
+            html += '<div class="event-meta-item event-formats">';
+            html += '<i class="fa-solid fa-tag event-icon"></i>';
+            html += '<span class="event-value">' + escapeHtml(props.event_formats.join(', ')) + '</span>';
+            html += '</div>';
+        }
+
+        html += '<div class="event-meta-item event-date">';
+        html += '<i class="fa-solid fa-calendar-days event-icon"></i>';
+        html += '<span class="event-value">' + formatEventDate(props.start_date, props.end_date) + '</span>';
+        html += '</div>';
+
+        if (props.start_time || props.end_time) {
+            html += '<div class="event-meta-item event-time">';
+            html += '<i class="fa-solid fa-clock event-icon"></i>';
+            html += '<span class="event-value">' + formatEventTime(props.start_time, props.end_time) + '</span>';
+            html += '</div>';
+        }
+
+        if (addressHtml) {
+            html += '<div class="event-meta-item event-location">';
+            html += '<i class="fa-solid fa-location-dot event-icon"></i>';
+            html += '<span class="event-value">' + addressHtml + '</span>';
+            html += '</div>';
+        }
+
+        html += '</div>';
+
+        if (props.event_description) {
+            html += '<div class="event-meta-item event-description">';
+            html += '<div class="event-value">' + props.event_description + '</div>';
+            html += '</div>';
+        }
+
+        html += '</div>';
+
+        if (props.post_content || actionsHtml) {
+            html += '<div class="event-modal-row event-modal-row--mobile-content">';
+            if (props.post_content) {
+                html += '<div class="event-meta-item event-post-content">';
+                html += '<div class="event-value">' + props.post_content + '</div>';
+                html += '</div>';
+            }
+            if (actionsHtml) {
+                html += '<div class="event-modal-actions">';
+                html += actionsHtml;
+                html += '</div>';
+            }
+            html += '</div>';
+        }
+
+        if (props.featured_image) {
+            html += '<div class="event-modal-row event-modal-row--mobile-media">';
+            html += '<div class="event-featured-image">';
+            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
+            html += '</div>';
+            html += '</div>';
+        }
 
         if (actionsHtml) {
             html += '<div class="event-modal-row event-modal-row--actions">';
