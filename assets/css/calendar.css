@@ -210,50 +210,16 @@
 }
 
 .event-modal-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas:
-        "info media"
-        "content content"
-        "actions actions";
+    display: flex;
+    flex-direction: column;
     gap: 30px;
 }
 
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
-.event-modal-layout--desktop {
-    display: flex;
-}
-
-.event-modal-layout--mobile {
-    display: none !important;
-    flex-direction: column;
-    gap: 24px;
-}
-
 .event-modal-row--top {
-=======
-.event-modal-row--info {
-    grid-area: info;
->>>>>>> main
     display: flex;
     align-items: stretch;
     gap: 32px;
     flex-wrap: wrap;
-}
-
-.event-modal-row--content {
-    grid-area: content;
-}
-
-.event-modal-row--actions {
-    grid-area: actions;
-}
-
-.event-modal-row--media {
-    grid-area: media;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .event-modal-column {
@@ -262,6 +228,12 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.event-modal-column--media {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -351,11 +323,6 @@
     margin-top: 20px;
 }
 
-.event-modal-actions {
-    display: flex;
-    flex-direction: column;
-}
-
 .event-link-btn,
 .event-register-btn {
     display: inline-block;
@@ -374,59 +341,6 @@ body.modal-open {
 /* ========================================
    Responsive
    ======================================== */
-
-@media (max-width: 1024px) {
-    .event-modal-layout--desktop {
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
-        display: none !important;
-    }
-
-    .event-modal-layout--mobile {
-        display: flex !important;
-=======
-        display: none;
-    }
-
-    .event-modal-layout--mobile {
-        display: flex;
->>>>>>> main
-    }
-
-    .event-modal-layout--mobile .event-info-grid {
-        gap: 1.5rem;
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
-        row-gap: 1.5rem;
-=======
->>>>>>> main
-    }
-
-    .event-modal-layout--mobile .event-meta-item {
-        flex-wrap: nowrap;
-        align-items: center;
-    }
-
-    .event-modal-row--mobile-info,
-    .event-modal-row--mobile-content,
-    .event-modal-row--mobile-media {
-        width: 100%;
-    }
-
-    .event-modal-row--mobile-info {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .event-modal-row--mobile-content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .event-modal-row--mobile-media .event-featured-image {
-        margin: 0;
-    }
-}
 
 @media (max-width: 768px) {
     .acf-events-filters {
@@ -447,64 +361,21 @@ body.modal-open {
         max-height: 95vh;
     }
 
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
-=======
     .event-modal-row--top {
-        display: contents;
-    }
-
-    .event-modal-row--info,
-    .event-modal-row--content,
-    .event-modal-row--actions,
-    .event-modal-row--media {
-        width: 100%;
-    }
-
-    .event-modal-row--info {
-        gap: 20px;
-    }
-
-    .event-modal-row--mobile-content {
-        display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 24px;
     }
 
-    .event-modal-row--mobile-media .event-featured-image {
-        margin: 0;
-    }
-
-    .event-modal-column--info {
-        display: contents;
-    }
-
-    .event-modal-title {
-        order: 1;
-    }
-
-    .event-info-grid {
-        order: 2;
-    }
-
-    .event-description {
-        order: 3;
-    }
-
-    .event-modal-row--content {
-        order: 4;
-    }
-
-    .event-modal-actions {
-        order: 5;
-    }
-
-    .event-modal-column--media {
-        order: 6;
+    .event-modal-column {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
     
->>>>>>> main
     .event-modal-body {
         padding: 35px 20px 20px;
+    }
+    
+    .event-modal-title {
     }
     
     #acf-events-calendar {

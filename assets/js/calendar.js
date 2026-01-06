@@ -187,7 +187,6 @@
         const props = event.extendedProps;
         let html = '';
         let addressHtml = '';
-        let actionsHtml = '';
 
         if (props.event_address) {
             let address = '';
@@ -207,7 +206,7 @@
         }
 
         html += '<div class="event-modal-layout">';
-        html += '<div class="event-modal-row event-modal-row--info">';
+        html += '<div class="event-modal-row event-modal-row--top">';
         html += '<div class="event-modal-column event-modal-column--info">';
 
         // Event Title
@@ -264,51 +263,32 @@
 
         // Event URL
         if (props.event_url) {
-            actionsHtml += '<div class="event-meta-item event-url">';
-            actionsHtml += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
-            actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
-            actionsHtml += 'Event Website</a>';
-            actionsHtml += '</div>';
+            html += '<div class="event-meta-item event-url">';
+            html += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
+            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+            html += 'Event Website</a>';
+            html += '</div>';
         }
 
         // Registration
         if (props.registration_required && props.registration_link) {
             const ctaText = props.registration_cta || 'Register';
-            actionsHtml += '<div class="event-meta-item event-registration">';
-            actionsHtml += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
-            actionsHtml += escapeHtml(ctaText);
-            actionsHtml += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
-            actionsHtml += '</div>';
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
-        }
-
-        if (actionsHtml) {
-            html += '<div class="event-modal-actions">';
-            html += actionsHtml;
-            html += '</div>';
-=======
->>>>>>> main
-        }
-
-        if (actionsHtml) {
-            html += '<div class="event-modal-actions">';
-            html += actionsHtml;
+            html += '<div class="event-meta-item event-registration">';
+            html += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
+            html += escapeHtml(ctaText);
+            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
             html += '</div>';
         }
 
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
+        html += '</div>';
+
+        // Featured Image
         html += '<div class="event-modal-column event-modal-column--media">';
         if (props.featured_image) {
             html += '<div class="event-featured-image">';
             html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
-=======
-        if (actionsHtml) {
-            html += '<div class="event-modal-actions event-modal-actions--primary">';
-            html += actionsHtml;
->>>>>>> main
             html += '</div>';
         }
-
         html += '</div>';
         html += '</div>';
 
@@ -320,100 +300,6 @@
             html += '</div>';
             html += '</div>';
         }
-        html += '</div>';
-
-        html += '<div class="event-modal-layout event-modal-layout--mobile">';
-        html += '<div class="event-modal-row event-modal-row--mobile-info">';
-        html += '<h2 class="event-modal-title">' + escapeHtml(event.title) + '</h2>';
-        html += '<div class="event-info-grid">';
-
-        if (props.event_types && props.event_types.length > 0) {
-            html += '<div class="event-meta-item event-types">';
-            html += '<i class="fa-solid fa-filter event-icon"></i>';
-            html += '<span class="event-value">' + escapeHtml(props.event_types.join(', ')) + '</span>';
-            html += '</div>';
-        }
-
-        if (props.event_formats && props.event_formats.length > 0) {
-            html += '<div class="event-meta-item event-formats">';
-            html += '<i class="fa-solid fa-tag event-icon"></i>';
-            html += '<span class="event-value">' + escapeHtml(props.event_formats.join(', ')) + '</span>';
-            html += '</div>';
-        }
-
-        html += '<div class="event-meta-item event-date">';
-        html += '<i class="fa-solid fa-calendar-days event-icon"></i>';
-        html += '<span class="event-value">' + formatEventDate(props.start_date, props.end_date) + '</span>';
-        html += '</div>';
-
-        if (props.start_time || props.end_time) {
-            html += '<div class="event-meta-item event-time">';
-            html += '<i class="fa-solid fa-clock event-icon"></i>';
-            html += '<span class="event-value">' + formatEventTime(props.start_time, props.end_time) + '</span>';
-            html += '</div>';
-        }
-
-        if (addressHtml) {
-            html += '<div class="event-meta-item event-location">';
-            html += '<i class="fa-solid fa-location-dot event-icon"></i>';
-            html += '<span class="event-value">' + addressHtml + '</span>';
-            html += '</div>';
-        }
-
-        html += '</div>';
-
-        if (props.event_description) {
-            html += '<div class="event-meta-item event-description">';
-            html += '<div class="event-value">' + props.event_description + '</div>';
-            html += '</div>';
-        }
-
-        html += '</div>';
-
-        if (props.post_content || actionsHtml) {
-            html += '<div class="event-modal-row event-modal-row--mobile-content">';
-            if (props.post_content) {
-                html += '<div class="event-meta-item event-post-content">';
-                html += '<div class="event-value">' + props.post_content + '</div>';
-                html += '</div>';
-            }
-            if (actionsHtml) {
-                html += '<div class="event-modal-actions">';
-                html += actionsHtml;
-                html += '</div>';
-            }
-            html += '</div>';
-        }
-
-        if (props.featured_image) {
-            html += '<div class="event-modal-row event-modal-row--mobile-media">';
-            html += '<div class="event-featured-image">';
-            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
-            html += '</div>';
-            html += '</div>';
-        }
-<<<<<<< codex/change-modal-layout-for-mobile-and-tablets-7bz7wg
-=======
-
-        if (actionsHtml) {
-            html += '<div class="event-modal-row event-modal-row--actions">';
-            html += '<div class="event-modal-actions event-modal-actions--secondary">';
-            html += actionsHtml;
-            html += '</div>';
-            html += '</div>';
-        }
-
-        // Featured Image
-        if (props.featured_image) {
-            html += '<div class="event-modal-row event-modal-row--media">';
-            html += '<div class="event-modal-column event-modal-column--media">';
-            html += '<div class="event-featured-image">';
-            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
-            html += '</div>';
-            html += '</div>';
-            html += '</div>';
-        }
->>>>>>> main
 
         html += '</div>';
         
