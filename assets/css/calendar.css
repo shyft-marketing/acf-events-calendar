@@ -215,6 +215,12 @@
     gap: 30px;
 }
 
+.event-modal-layout--responsive {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .event-modal-row--top {
     display: flex;
     align-items: stretch;
@@ -299,6 +305,18 @@
     margin-bottom: 20px;
 }
 
+.event-info-grid--responsive {
+    margin-bottom: 0;
+}
+
+.event-info-grid--responsive .event-meta-item {
+    flex-wrap: nowrap;
+}
+
+.event-modal-cta {
+    display: flex;
+}
+
 .event-description {
     margin-top: 20px;
     padding-top: 20px;
@@ -380,5 +398,15 @@ body.modal-open {
     
     #acf-events-calendar {
         padding: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .event-modal-layout--desktop {
+        display: none;
+    }
+
+    .event-modal-layout--responsive {
+        display: flex;
     }
 }

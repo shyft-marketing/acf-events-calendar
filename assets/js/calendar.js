@@ -187,6 +187,7 @@
         const props = event.extendedProps;
         let html = '';
         let addressHtml = '';
+        let infoItemsHtml = '';
 
         if (props.event_address) {
             let address = '';
@@ -205,102 +206,105 @@
             }
         }
 
-        html += '<div class="event-modal-layout">';
-        html += '<div class="event-modal-row event-modal-row--top">';
-        html += '<div class="event-modal-column event-modal-column--info">';
-
-        // Event Title
-        html += '<h2 class="event-modal-title">' + escapeHtml(event.title) + '</h2>';
-
-        html += '<div class="event-info-grid">';
-
         // Event Types (taxonomies)
         if (props.event_types && props.event_types.length > 0) {
-            html += '<div class="event-meta-item event-types">';
-            html += '<i class="fa-solid fa-filter event-icon"></i>';
-            html += '<span class="event-value">' + escapeHtml(props.event_types.join(', ')) + '</span>';
-            html += '</div>';
+            infoItemsHtml += '<div class="event-meta-item event-types">';
+            infoItemsHtml += '<i class="fa-solid fa-filter event-icon"></i>';
+            infoItemsHtml += '<span class="event-value">' + escapeHtml(props.event_types.join(', ')) + '</span>';
+            infoItemsHtml += '</div>';
         }
 
         // Event Formats (taxonomies)
         if (props.event_formats && props.event_formats.length > 0) {
-            html += '<div class="event-meta-item event-formats">';
-            html += '<i class="fa-solid fa-tag event-icon"></i>';
-            html += '<span class="event-value">' + escapeHtml(props.event_formats.join(', ')) + '</span>';
-            html += '</div>';
+            infoItemsHtml += '<div class="event-meta-item event-formats">';
+            infoItemsHtml += '<i class="fa-solid fa-tag event-icon"></i>';
+            infoItemsHtml += '<span class="event-value">' + escapeHtml(props.event_formats.join(', ')) + '</span>';
+            infoItemsHtml += '</div>';
         }
 
         // Date
-        html += '<div class="event-meta-item event-date">';
-        html += '<i class="fa-solid fa-calendar-days event-icon"></i>';
-        html += '<span class="event-value">' + formatEventDate(props.start_date, props.end_date) + '</span>';
-        html += '</div>';
+        infoItemsHtml += '<div class="event-meta-item event-date">';
+        infoItemsHtml += '<i class="fa-solid fa-calendar-days event-icon"></i>';
+        infoItemsHtml += '<span class="event-value">' + formatEventDate(props.start_date, props.end_date) + '</span>';
+        infoItemsHtml += '</div>';
 
         // Time
         if (props.start_time || props.end_time) {
-            html += '<div class="event-meta-item event-time">';
-            html += '<i class="fa-solid fa-clock event-icon"></i>';
-            html += '<span class="event-value">' + formatEventTime(props.start_time, props.end_time) + '</span>';
-            html += '</div>';
+            infoItemsHtml += '<div class="event-meta-item event-time">';
+            infoItemsHtml += '<i class="fa-solid fa-clock event-icon"></i>';
+            infoItemsHtml += '<span class="event-value">' + formatEventTime(props.start_time, props.end_time) + '</span>';
+            infoItemsHtml += '</div>';
         }
 
         // Location/Address
         if (addressHtml) {
-            html += '<div class="event-meta-item event-location">';
-            html += '<i class="fa-solid fa-location-dot event-icon"></i>';
-            html += '<span class="event-value">' + addressHtml + '</span>';
-            html += '</div>';
+            infoItemsHtml += '<div class="event-meta-item event-location">';
+            infoItemsHtml += '<i class="fa-solid fa-location-dot event-icon"></i>';
+            infoItemsHtml += '<span class="event-value">' + addressHtml + '</span>';
+            infoItemsHtml += '</div>';
         }
 
-        html += '</div>';
+        const infoGridHtml = infoItemsHtml ? '<div class="event-info-grid">' + infoItemsHtml + '</div>' : '';
 
         // Description
-        if (props.event_description) {
-            html += '<div class="event-meta-item event-description">';
-            html += '<div class="event-value">' + props.event_description + '</div>';
-            html += '</div>';
-        }
+        const descriptionHtml = props.event_description
+            ? '<div class="event-meta-item event-description"><div class="event-value">' + props.event_description + '</div></div>'
+            : '';
 
         // Event URL
-        if (props.event_url) {
-            html += '<div class="event-meta-item event-url">';
-            html += '<a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn">';
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
-            html += 'Event Website</a>';
-            html += '</div>';
-        }
+        const urlHtml = props.event_url
+            ? '<div class="event-meta-item event-url"><a href="' + escapeHtml(props.event_url) + '" target="_blank" rel="noopener" class="event-link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>Event Website</a></div>'
+            : '';
 
         // Registration
+        let registrationHtml = '';
         if (props.registration_required && props.registration_link) {
             const ctaText = props.registration_cta || 'Register';
-            html += '<div class="event-meta-item event-registration">';
-            html += '<a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">';
-            html += escapeHtml(ctaText);
-            html += '<i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
-            html += '</div>';
+            registrationHtml = '<div class="event-meta-item event-registration"><a href="' + escapeHtml(props.registration_link) + '" target="_blank" rel="noopener" class="event-register-btn">' + escapeHtml(ctaText) + '<i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>';
         }
 
-        html += '</div>';
+        const featuredImageHtml = props.featured_image
+            ? '<div class="event-featured-image"><img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '"></div>'
+            : '';
 
-        // Featured Image
+        const postContentHtml = props.post_content
+            ? '<div class="event-meta-item event-post-content"><div class="event-value">' + props.post_content + '</div></div>'
+            : '';
+
+        html += '<div class="event-modal-layout event-modal-layout--desktop">';
+        html += '<div class="event-modal-row event-modal-row--top">';
+        html += '<div class="event-modal-column event-modal-column--info">';
+        html += '<h2 class="event-modal-title">' + escapeHtml(event.title) + '</h2>';
+        html += infoGridHtml;
+        html += descriptionHtml;
+        html += urlHtml;
+        html += registrationHtml;
+        html += '</div>';
         html += '<div class="event-modal-column event-modal-column--media">';
-        if (props.featured_image) {
-            html += '<div class="event-featured-image">';
-            html += '<img src="' + escapeHtml(props.featured_image) + '" alt="' + escapeHtml(event.title) + '">';
-            html += '</div>';
-        }
+        html += featuredImageHtml;
         html += '</div>';
         html += '</div>';
 
-        // Post Content
         if (props.post_content) {
             html += '<div class="event-modal-row event-modal-row--content">';
-            html += '<div class="event-meta-item event-post-content">';
-            html += '<div class="event-value">' + props.post_content + '</div>';
-            html += '</div>';
+            html += postContentHtml;
             html += '</div>';
         }
+        html += '</div>';
 
+        html += '<div class="event-modal-layout event-modal-layout--responsive">';
+        html += '<h2 class="event-modal-title">' + escapeHtml(event.title) + '</h2>';
+        if (infoItemsHtml) {
+            html += '<div class="event-info-grid event-info-grid--responsive">' + infoItemsHtml + '</div>';
+        }
+        html += descriptionHtml;
+        html += postContentHtml;
+        if (registrationHtml) {
+            html += '<div class="event-modal-cta">' + registrationHtml + '</div>';
+        } else if (urlHtml) {
+            html += '<div class="event-modal-cta">' + urlHtml + '</div>';
+        }
+        html += featuredImageHtml;
         html += '</div>';
         
         $('.event-modal-body').html(html);
