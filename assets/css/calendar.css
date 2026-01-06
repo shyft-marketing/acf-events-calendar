@@ -363,10 +363,12 @@ body.modal-open {
 @media (max-width: 768px) {
     .acf-events-filters {
         flex-direction: column;
+        align-content: flex-start;
     }
     
     .filter-group {
         min-width: 100%;
+        flex: 0 0 auto;
     }
     
     .clear-filters-btn {
