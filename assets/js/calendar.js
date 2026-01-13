@@ -18,17 +18,27 @@
         if (!calendarEl) {
             return;
         }
+
+        const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+        const getHeaderToolbar = (isMobile) => ({
+            left: 'prev,next today',
+            center: 'title',
+            right: isMobile ? 'listMonth' : 'dayGridMonth,listMonth'
+        });
         
         calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,listMonth'
-            },
+            initialView: mobileMediaQuery.matches ? 'listMonth' : 'dayGridMonth',
+            headerToolbar: getHeaderToolbar(mobileMediaQuery.matches),
             buttonText: {
                 dayGridMonth: 'Calendar',
                 listMonth: 'List'
+            },
+            windowResize: function() {
+                const isMobile = mobileMediaQuery.matches;
+                calendar.setOption('headerToolbar', getHeaderToolbar(isMobile));
+                if (isMobile && calendar.view.type !== 'listMonth') {
+                    calendar.changeView('listMonth');
+                }
             },
             events: function(info, successCallback, failureCallback) {
                 fetchEvents(successCallback, failureCallback);
