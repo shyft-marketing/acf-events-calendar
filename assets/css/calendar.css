@@ -401,6 +401,26 @@ body.modal-open {
     #acf-events-calendar {
         padding: 10px;
     }
+
+    .acf-events-calendar-wrapper .fc-listMonth-button {
+        display: none;
+    }
+
+    .acf-events-calendar-wrapper .fc-toolbar {
+        align-items: center;
+    }
+
+    .acf-events-calendar-wrapper .fc-toolbar .fc-toolbar-chunk:nth-child(2) {
+        margin-left: auto;
+    }
+
+    .acf-events-calendar-wrapper .fc-toolbar .fc-toolbar-chunk:last-child {
+        display: none;
+    }
+
+    .acf-events-calendar-wrapper .fc-toolbar-title {
+        text-align: right;
+    }
 }
 
 @media (max-width: 1024px) {
